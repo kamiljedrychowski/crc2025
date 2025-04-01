@@ -1,0 +1,228 @@
+{
+  "info": {
+    "name": "Spring Library API Demo (v2)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Authors",
+      "item": [
+        {
+          "name": "Add Author",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"Jan Brzechwa\",\n    \"birthYear\": 1898\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/author/authors",
+              "host": [ "{{baseUrl}}" ],
+              "path": [ "api", "library", "authors" ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get All Authors",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/author/authors",
+              "host": [ "{{baseUrl}}" ],
+              "path": [ "api", "library", "authors" ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Author by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/author/authors/{{authorId}}",
+              "host": [ "{{baseUrl}}" ],
+              "path": [ "api", "library", "authors", "{{authorId}}" ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Find Author by Name",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/author/authors/search?name=Jan%20Brzechwa",
+              "host": [ "{{baseUrl}}" ],
+              "path": [ "api", "library", "authors", "search" ],
+              "query": [
+                {
+                  "key": "name",
+                  "value": "Jan Brzechwa"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Author",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/author/authors/{{authorId}}",
+              "host": [ "{{baseUrl}}" ],
+              "path": [ "api", "library", "authors", "{{authorId}}" ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Books",
+      "item": [
+        {
+          "name": "Add Book to Author",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"title\": \"Akademia Pana Kleksa\",\n    \"publicationYear\": 1946\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/book/authors/{{authorId}}/books",
+              "host": [ "{{baseUrl}}" ],
+              "path": [ "api", "library", "authors", "{{authorId}}", "books" ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get All Books",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/book/books",
+              "host": [ "{{baseUrl}}" ],
+              "path": [ "api", "library", "books" ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get All Books Count",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/book/books/number",
+              "host": [ "{{baseUrl}}" ],
+              "path": [ "api", "library", "books" ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Book by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/book/books/{{bookId}}",
+              "host": [ "{{baseUrl}}" ],
+              "path": [ "api", "library", "books", "{{bookId}}" ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Books by Author",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/book/authors/{{authorId}}/books",
+              "host": [ "{{baseUrl}}" ],
+              "path": [ "api", "library", "authors", "{{authorId}}", "books" ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Find Books by Title",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/book/books/search?title=Książka",
+              "host": [ "{{baseUrl}}" ],
+              "path": [ "api", "library", "books", "search" ],
+              "query": [
+                {
+                  "key": "title",
+                  "value": "Książka"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Book",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/book/books/{{bookId}}",
+              "host": [ "{{baseUrl}}" ],
+              "path": [ "api", "library", "books", "{{bookId}}" ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8080"
+    },
+    {
+      "key": "authorId",
+      "value": "1"
+    },
+    {
+      "key": "bookId",
+      "value": "1"
+    }
+  ]
+}

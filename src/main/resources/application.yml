@@ -1,0 +1,27 @@
+spring:
+  flyway:
+    enabled: true
+    table: migrations
+    locations: classpath:migrations
+    schemas: testtest
+  datasource:
+    url: jdbc:postgresql://localhost:5400/postgres
+    username: crc2025
+    password: crc2025
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      # Dostępne wartości:
+      #   validate: Sprawdza, czy schemat pasuje do encji, rzuca błąd jeśli nie. Nie tworzy/aktualizuje.
+      #   update:   Aktualizuje schemat (dodaje brakujące tabele/kolumny). Ostrożnie - może nie wykryć wszystkich zmian (np. usunięcia).
+      #   create:   Usuwa istniejący schemat (jeśli istnieje) i tworzy go od nowa przy starcie aplikacji. Utrata danych! Dobry do demonstracji.
+      #   create-drop: Jak 'create', ale dodatkowo usuwa schemat przy zamknięciu aplikacji. Dobry do testów.
+      #   none:     Nie robi nic ze schematem (oczekuje, że schemat już istnieje i jest poprawny).
+      ddl-auto: create # validate #  # <- Ustawiamy na 'create', aby Hibernate utworzył tabele od zera
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        default_schema: testtest
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
