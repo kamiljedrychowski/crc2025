@@ -15,7 +15,7 @@ public class BookJdbcService {
     }
 
     public Integer getBooksCount() {
-        return jdbcTemplate.queryForObject("SELECT COUNT(*) FROM testtest.BOOKS", Integer.class);
+        return jdbcTemplate.queryForObject("SELECT COUNT(*) FROM crc.BOOKS", Integer.class);
     }
 
 }

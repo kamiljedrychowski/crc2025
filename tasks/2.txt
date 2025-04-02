@@ -1,0 +1,4 @@
+1. Stwórz drugą tabelę - odwołaj się w niej do poprzednio stworzonej tabeli
+2. Napisz 2 zapytania select wykorzystując join
+3. Wyczyść dane z dwóch tabel
+4. Usuń te tabele

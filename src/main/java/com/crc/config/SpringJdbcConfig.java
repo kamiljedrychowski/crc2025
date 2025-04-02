@@ -24,7 +24,7 @@
 //        DriverManagerDataSource dataSource = new DriverManagerDataSource();
 //        dataSource.setDriverClassName("org.postgresql.Driver");
 //        dataSource.setUrl("jdbc:postgresql://localhost:5400/postgres");
-//        dataSource.setSchema("testtest");
+//        dataSource.setSchema("crc");
 //        dataSource.setUsername(username);
 //        dataSource.setPassword(password);
 //        return dataSource;

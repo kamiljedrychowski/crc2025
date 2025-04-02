@@ -1,0 +1,6 @@
+1. Stwórz tabelę z użyciem constraintów
+2. Dodaj nową kolimnę do tabeli
+3. Wypełnij tabelę danymi i sprawdź czy możesz dodać wartość sprzeczną z założonym constraintem
+4. Wyszukaj wszystkie elementy i posortuj je po nazwie w kolejności alfabetycznej
+5. Wykonaj update dla dowolnej wartości
+6. Usuń wybraną kolumnę
